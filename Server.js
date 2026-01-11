@@ -11,8 +11,9 @@ console.log("Starting backend...");
 
 // MongoDB
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB Connected to studentDB"))
-  .catch(err => console.log(err));
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.error("MongoDB Error:", err));
+
 
 app.use("/students", studentRoutes);
 
